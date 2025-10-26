@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1761503324" />
+    <testcase name="sat_random_test" classname="sat_random_test_pyvsc_rnd" file="/home/awa/VerificationCourse/L07_Exercise/exercises/E03_sat_cocotb_test/sat_random_test_pyvsc_rnd.py" lineno="35" time="0.03300881385803223" sim_time_ns="35.001" ratio_time="1060.3531575092632" />
+  </testsuite>
+</testsuites>

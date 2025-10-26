@@ -1,0 +1,47 @@
+#! /usr/local/bin/vvp
+:ivl_version "12.0 (stable)" "(v12_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+:vpi_module "/usr/local/lib/ivl/v2009.vpi";
+S_0x644e33265d90 .scope package, "$unit" "$unit" 2 1;
+ .timescale -9 -12;
+S_0x644e33265f20 .scope module, "mux" "mux" 3 4;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 4 "A";
+    .port_info 2 /INPUT 2 "sel";
+    .port_info 3 /OUTPUT 1 "out";
+o0x74aa54b7e018 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x644e3328bfa0_0 .net "A", 3 0, o0x74aa54b7e018;  0 drivers
+o0x74aa54b7e048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x644e332ade80_0 .net "clk", 0 0, o0x74aa54b7e048;  0 drivers
+v0x644e332adf40_0 .var "out", 0 0;
+o0x74aa54b7e0a8 .functor BUFZ 2, C4<zz>; HiZ drive
+v0x644e332ae010_0 .net "sel", 1 0, o0x74aa54b7e0a8;  0 drivers
+E_0x644e33266290 .event posedge, v0x644e332ade80_0;
+    .scope S_0x644e33265f20;
+T_0 ;
+    %wait E_0x644e33266290;
+    %load/vec4 v0x644e3328bfa0_0;
+    %load/vec4 v0x644e332ae010_0;
+    %part/u 1;
+    %assign/vec4 v0x644e332adf40_0, 0;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x644e33265f20;
+T_1 ;
+    %vpi_call/w 3 15 "$dumpfile", "sim_build/mux.vcd" {0 0 0};
+    %vpi_call/w 3 16 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x644e33265f20 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "/home/awa/VerificationCourse/E02_intro_cocotb_exercises/B_mux/test/../rtl/mux.sv";

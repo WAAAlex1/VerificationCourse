@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1759739950" />
+    <testcase name="sat_random_test" classname="sat_random_test" file="/home/awa/VerificationCourse/L06_Exercises/exercises/E03_sat_cocotb_test/sat_random_test.py" lineno="30" time="0.1173250675201416" sim_time_ns="120.001" ratio_time="1022.8078494768308" />
+  </testsuite>
+</testsuites>

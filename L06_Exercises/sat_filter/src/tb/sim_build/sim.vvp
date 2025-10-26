@@ -1,0 +1,125 @@
+#! /usr/local/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+:vpi_module "/usr/local/lib/ivl/v2009.vpi";
+S_0x589404e7e970 .scope package, "$unit" "$unit" 2 1;
+ .timescale -9 -12;
+S_0x589404e7eb00 .scope module, "sat_filter_wrapper" "sat_filter_wrapper" 3 15;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "rst";
+    .port_info 1 /INPUT 4 "in_data";
+    .port_info 2 /INPUT 1 "in_valid";
+    .port_info 3 /OUTPUT 1 "ovf";
+    .port_info 4 /OUTPUT 1 "out_valid";
+    .port_info 5 /OUTPUT 4 "out_data";
+P_0x589404e665f0 .param/l "DATA_W" 0 3 17, +C4<00000000000000000000000000000100>;
+P_0x589404e66630 .param/l "THRESHOLD" 0 3 16, +C4<00000000000000000000000000001000>;
+v0x589404e93ec0_0 .var "clk", 0 0;
+o0x7760722a6048 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x589404e93f80_0 .net "in_data", 3 0, o0x7760722a6048;  0 drivers
+o0x7760722a6078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x589404e94050_0 .net "in_valid", 0 0, o0x7760722a6078;  0 drivers
+v0x589404e94150_0 .net "out_data", 3 0, v0x589404e93a70_0;  1 drivers
+v0x589404e94220_0 .net "out_valid", 0 0, v0x589404e93b50_0;  1 drivers
+v0x589404e94310_0 .net "ovf", 0 0, v0x589404e93c60_0;  1 drivers
+o0x7760722a6138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x589404e943e0_0 .net "rst", 0 0, o0x7760722a6138;  0 drivers
+S_0x589404e40e60 .scope module, "sat_filter_0" "sat_filter" 3 33, 4 11 0, S_0x589404e7eb00;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 4 "in_data";
+    .port_info 3 /INPUT 1 "in_valid";
+    .port_info 4 /OUTPUT 1 "ovf";
+    .port_info 5 /OUTPUT 1 "out_valid";
+    .port_info 6 /OUTPUT 4 "out_data";
+P_0x589404e52140 .param/l "DATA_W" 0 4 13, +C4<00000000000000000000000000000100>;
+P_0x589404e52180 .param/l "THRESHOLD" 0 4 12, +C4<00000000000000000000000000001000>;
+P_0x589404e521c0 .param/l "threshold_val" 1 4 25, +C4<00000000000000000000000000001000>;
+v0x589404e41190_0 .net "clk", 0 0, v0x589404e93ec0_0;  1 drivers
+v0x589404e938c0_0 .net "in_data", 3 0, o0x7760722a6048;  alias, 0 drivers
+v0x589404e939a0_0 .net "in_valid", 0 0, o0x7760722a6078;  alias, 0 drivers
+v0x589404e93a70_0 .var "out_data", 3 0;
+v0x589404e93b50_0 .var "out_valid", 0 0;
+v0x589404e93c60_0 .var "ovf", 0 0;
+v0x589404e93d20_0 .net "rst", 0 0, o0x7760722a6138;  alias, 0 drivers
+E_0x589404e41910 .event posedge, v0x589404e93d20_0, v0x589404e41190_0;
+    .scope S_0x589404e40e60;
+T_0 ;
+    %vpi_call/w 4 30 "$dumpfile", "sim_build/sat_filter_waves.vcd" {0 0 0};
+    %vpi_call/w 4 31 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x589404e40e60 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x589404e40e60;
+T_1 ;
+    %wait E_0x589404e41910;
+    %load/vec4 v0x589404e93d20_0;
+    %cmpi/e 1, 0, 1;
+    %jmp/0xz  T_1.0, 6;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x589404e93c60_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x589404e93b50_0, 0;
+    %pushi/vec4 0, 0, 4;
+    %assign/vec4 v0x589404e93a70_0, 0;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/vec4 v0x589404e939a0_0;
+    %cmpi/e 1, 0, 1;
+    %jmp/0xz  T_1.2, 6;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x589404e93b50_0, 0;
+    %load/vec4 v0x589404e938c0_0;
+    %pad/u 32;
+    %cmpi/u 8, 0, 32;
+    %flag_or 5, 4; GT is !LE
+    %flag_inv 5;
+    %jmp/0xz  T_1.4, 5;
+    %pushi/vec4 8, 0, 4;
+    %assign/vec4 v0x589404e93a70_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x589404e93c60_0, 0;
+    %jmp T_1.5;
+T_1.4 ;
+    %load/vec4 v0x589404e938c0_0;
+    %assign/vec4 v0x589404e93a70_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x589404e93c60_0, 0;
+T_1.5 ;
+    %jmp T_1.3;
+T_1.2 ;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x589404e93b50_0, 0;
+    %pushi/vec4 0, 0, 4;
+    %assign/vec4 v0x589404e93a70_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x589404e93c60_0, 0;
+T_1.3 ;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x589404e7eb00;
+T_2 ;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x589404e93ec0_0, 0;
+T_2.0 ;
+    %delay 2500, 0;
+    %load/vec4 v0x589404e93ec0_0;
+    %inv;
+    %store/vec4 v0x589404e93ec0_0, 0, 1;
+    %jmp T_2.0;
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "/home/awa/VerificationCourse/L06_Exercises/sat_filter/src/tb/../rtl/sat_filter_wrapper.sv";
+    "/home/awa/VerificationCourse/L06_Exercises/sat_filter/src/tb/../rtl/sat_filter.sv";

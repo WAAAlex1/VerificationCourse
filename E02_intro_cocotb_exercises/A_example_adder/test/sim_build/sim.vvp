@@ -1,0 +1,47 @@
+#! /usr/local/bin/vvp
+:ivl_version "12.0 (stable)" "(v12_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+:vpi_module "/usr/local/lib/ivl/v2009.vpi";
+S_0x60bddf33d7b0 .scope package, "$unit" "$unit" 2 1;
+ .timescale -9 -12;
+S_0x60bddf33d940 .scope module, "adder" "adder" 3 4;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 4 "A";
+    .port_info 1 /INPUT 4 "B";
+    .port_info 2 /OUTPUT 5 "X";
+P_0x60bddf317b90 .param/l "DATA_WIDTH" 0 3 5, +C4<00000000000000000000000000000100>;
+o0x72155688b018 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x60bddf303e80_0 .net "A", 3 0, o0x72155688b018;  0 drivers
+o0x72155688b048 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x60bddf34d5c0_0 .net "B", 3 0, o0x72155688b048;  0 drivers
+v0x60bddf34d6a0_0 .net "X", 4 0, L_0x60bddf34de80;  1 drivers
+v0x60bddf34d790_0 .net *"_ivl_0", 4 0, L_0x60bddf34dbe0;  1 drivers
+L_0x721556842018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x60bddf34d870_0 .net *"_ivl_3", 0 0, L_0x721556842018;  1 drivers
+v0x60bddf34d9a0_0 .net *"_ivl_4", 4 0, L_0x60bddf34dd30;  1 drivers
+L_0x721556842060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x60bddf34da80_0 .net *"_ivl_7", 0 0, L_0x721556842060;  1 drivers
+L_0x60bddf34dbe0 .concat [ 4 1 0 0], o0x72155688b018, L_0x721556842018;
+L_0x60bddf34dd30 .concat [ 4 1 0 0], o0x72155688b048, L_0x721556842060;
+L_0x60bddf34de80 .arith/sum 5, L_0x60bddf34dbe0, L_0x60bddf34dd30;
+S_0x60bddf303cf0 .scope module, "cocotb_iverilog_dump" "cocotb_iverilog_dump" 4 1;
+ .timescale -9 -12;
+    .scope S_0x60bddf303cf0;
+T_0 ;
+    %vpi_call/w 4 3 "$dumpfile", "sim_build/adder.fst" {0 0 0};
+    %vpi_call/w 4 4 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x60bddf33d940 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "/home/awa/VerificationCourse/E02_intro_cocotb_exercises/A_example_adder/test/../rtl/adder.sv";
+    "sim_build/cocotb_iverilog_dump.v";

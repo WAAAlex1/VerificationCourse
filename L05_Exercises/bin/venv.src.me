@@ -1,0 +1,9 @@
+# create Python venv
+python3 -m venv .venv
+.venv/bin/pip3 install --upgrade pip
+.venv/bin/pip3 install -r bin/requirements.txt
+
+# Replace PyUVM file for sequences (adding pre_body and post_body)
+echo "\nReplacing PyUVM sequence file\n"
+rm .venv/lib/python3.10/site-packages/pyuvm/s14_15_python_sequences.py
+cp bin/s14_15_python_sequences.py .venv/lib/python3.10/site-packages/pyuvm/

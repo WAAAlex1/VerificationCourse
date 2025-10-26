@@ -1,0 +1,14 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1718776014" />
+    <testcase name="test_sat_filter_inf_accumulate_seq" classname="test_sat_filter_inf_accumulate_seq" file="/mnt/common/itd/software/install/python/3.12.0.RL8/lib/python3.12/site-packages/cocotb/decorators.py" lineno="19" time="0.7392218112945557" sim_time_ns="187.501" ratio_time="253.64646596620375" />
+    <testcase name="test_sat_filter_rand_n_seq" classname="test_sat_filter_reactive_rand_n_seq" file="/mnt/common/itd/software/install/python/3.12.0.RL8/lib/python3.12/site-packages/cocotb/decorators.py" lineno="20" time="0.9604575634002686" sim_time_ns="515.0" ratio_time="536.2027637918396" />
+    <testcase name="test_sat_filter_rand_n_seq" classname="test_sat_filter_rand_n_seq" file="/mnt/common/itd/software/install/python/3.12.0.RL8/lib/python3.12/site-packages/cocotb/decorators.py" lineno="19" time="1.9296822547912598" sim_time_ns="545.0" ratio_time="282.4299174886461" />
+    <testcase name="test_sat_filter_default_accumulate_seq" classname="test_sat_filter_reactive_accumulate_value" file="/mnt/common/itd/software/install/python/3.12.0.RL8/lib/python3.12/site-packages/cocotb/decorators.py" lineno="20" time="0.34758877754211426" sim_time_ns="175.0" ratio_time="503.468498716984" />
+    <testcase name="bringup_test" classname="test_cocotb_bringup" file="/home/jacob/work/euprojects/edu4chip/edu4chip_contrib/sat_filter/src/tb/tests/test_cocotb_bringup.py" lineno="19" time="0.0003151893615722656" sim_time_ns="20.0" ratio_time="63453.91830559758" />
+    <testcase name="test_seq_data" classname="test_cocotb_bringup" file="/home/jacob/work/euprojects/edu4chip/edu4chip_contrib/sat_filter/src/tb/tests/test_cocotb_bringup.py" lineno="37" time="0.0013365745544433594" sim_time_ns="45.0" ratio_time="33668.15554762754" />
+    <testcase name="test_send_X_data" classname="test_cocotb_bringup" file="/home/jacob/work/euprojects/edu4chip/edu4chip_contrib/sat_filter/src/tb/tests/test_cocotb_bringup.py" lineno="56" time="0.0015530586242675781" sim_time_ns="45.0" ratio_time="28975.081363217683" />
+    <testcase name="test_rand_all" classname="test_cocotb_bringup" file="/home/jacob/work/euprojects/edu4chip/edu4chip_contrib/sat_filter/src/tb/tests/test_cocotb_bringup.py" lineno="80" time="0.004277944564819336" sim_time_ns="155.0" ratio_time="36232.35356406398" />
+    <testcase name="test_sat_filter_default_seq" classname="test_sat_filter_default_seq" file="/mnt/common/itd/software/install/python/3.12.0.RL8/lib/python3.12/site-packages/cocotb/decorators.py" lineno="17" time="0.14622902870178223" sim_time_ns="65.0" ratio_time="444.5081840252132" />
+  </testsuite>
+</testsuites>

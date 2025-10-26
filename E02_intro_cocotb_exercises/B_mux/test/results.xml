@@ -1,0 +1,7 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1758490410" />
+    <testcase name="mux_basic_test" classname="test_mux" file="/home/awa/VerificationCourse/E02_intro_cocotb_exercises/B_mux/test/test_mux.py" lineno="11" time="0.0009672641754150391" sim_time_ns="0.0" ratio_time="0.0" />
+    <testcase name="mux_randomised_test" classname="test_mux" file="/home/awa/VerificationCourse/E02_intro_cocotb_exercises/B_mux/test/test_mux.py" lineno="32" time="0.0023474693298339844" sim_time_ns="42.0" ratio_time="17891.607556368068" />
+  </testsuite>
+</testsuites>

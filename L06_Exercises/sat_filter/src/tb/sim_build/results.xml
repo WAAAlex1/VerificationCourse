@@ -1,0 +1,7 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1759742308" />
+    <testcase name="test_sat_filter_default_seq" classname="test_sat_filter_default_seq" file="/home/awa/VerificationCourse/cocotb_env/lib/python3.10/site-packages/cocotb/decorators.py" lineno="17" time="0.11468815803527832" sim_time_ns="62.501" ratio_time="544.9647206015337" />
+    <testcase name="test_sat_filter_rnd_itr" classname="test_sat_filter_rnd_itr" file="/home/awa/VerificationCourse/cocotb_env/lib/python3.10/site-packages/cocotb/decorators.py" lineno="16" time="1.0638716220855713" sim_time_ns="805.0" ratio_time="756.67024412392" />
+  </testsuite>
+</testsuites>

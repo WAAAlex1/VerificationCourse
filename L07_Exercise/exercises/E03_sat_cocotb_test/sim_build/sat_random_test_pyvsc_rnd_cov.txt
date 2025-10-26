@@ -1,0 +1,12 @@
+TYPE covergroup_ssdt : 0.00%
+    CVP cp1 : 0.00%
+    Bins:
+        min : 0
+        range : 0
+        max : 0
+    INST covergroup_ssdt : 0.00%
+        CVP cp1 : 0.00%
+        Bins:
+            min : 0
+            range : 0
+            max : 0
