@@ -24,8 +24,8 @@ class input:
 
     @vsc.constraint
     def in_data_constraint(self):
-        self.in_data > 0
-        self.in_data < 14
+        self.in_data >= 0
+        self.in_data <= 15
 
     @vsc.constraint
     def nbr_itr_constraint(self):
@@ -64,9 +64,10 @@ async def sat_random_test(dut):
     await RisingEdge(dut.clk)
     dut.rst.value = 0
     await RisingEdge(dut.clk)
+    dut.in_valid.value = 1
 
     # Generate random data and apply it
-    for i in range(10): # Restricted to only 10 runs due to this exercise. Otherwise, use nbr_itr
+    for i in range(nbr_itr): # Restricted to only 10 runs due to this exercise. Otherwise, use nbr_itr
 
         # Random inputs
         rand_inputs.randomize()

@@ -36,6 +36,7 @@ class uvc_ssdt_agent(uvm_agent):
         self.analysis_port = None   # Analysis Port handler
 
         # Define the coverage handle
+        self.coverage = None
 
         self.logger.debug("Agent initialized.")
 
@@ -80,6 +81,8 @@ class uvc_ssdt_agent(uvm_agent):
         self.logger.debug(f"Monitor created.")
 
         # Create instance of coverage collector and pass handle to ConfigDB
+        self.coverage = uvc_ssdt_coverage.create("coverage", self)
+        ConfigDB().set(self, "coverage", "cfg", self.cfg)
 
         # Create instance of Analysis Port
         self.analysis_port = uvm_analysis_port("analysis_port", self)
@@ -99,3 +102,4 @@ class uvc_ssdt_agent(uvm_agent):
         self.monitor.mon_analysis_port.connect(self.analysis_port)
 
         # Connect Coverage collector
+        self.monitor.mon_analysis_port.connect(self.coverage.analysis_export)

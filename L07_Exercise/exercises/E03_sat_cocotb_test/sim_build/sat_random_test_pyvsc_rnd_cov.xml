@@ -3,7 +3,7 @@
   <sourceFiles fileName="&lt;unknown&gt;" id="2"/>
   <sourceFiles fileName="/home/awa/VerificationCourse/L07_Exercise/exercises/E03_sat_cocotb_test/sat_filter_coverage.py" id="3"/>
   <sourceFiles fileName="/home/awa/VerificationCourse/L07_Exercise/exercises/E03_sat_cocotb_test/sat_random_test_pyvsc_rnd.py" id="4"/>
-  <historyNodes historyNodeId="0" logicalName="logicalName" physicalName="foo.ucis" kind="HistoryNodeKind.TEST" testStatus="true" simtime="0.0" timeunit="ns" runCwd="." cpuTime="0.0" seed="0" cmd="" args="" compulsory="0" date="2025-10-26T19:28:44" userName="user" cost="0.0" toolCategory="UCIS:simulator" ucisVersion="1.0" vendorId="unknown" vendorTool="unknown" vendorToolVersion="unknown"/>
+  <historyNodes historyNodeId="0" logicalName="logicalName" physicalName="foo.ucis" kind="HistoryNodeKind.TEST" testStatus="true" simtime="0.0" timeunit="ns" runCwd="." cpuTime="0.0" seed="0" cmd="" args="" compulsory="0" date="2025-10-26T20:52:21" userName="user" cost="0.0" toolCategory="UCIS:simulator" ucisVersion="1.0" vendorId="unknown" vendorTool="unknown" vendorToolVersion="unknown"/>
   <instanceCoverages name="cg_inst" key="0">
     <id file="1" line="1" inlineCount="1"/>
     <covergroupCoverage>
@@ -17,12 +17,12 @@
           <options/>
           <coverpointBin name="min" type="bins" key="0">
             <range from="-1" to="-1">
-              <contents coverageCount="0"/>
+              <contents coverageCount="4"/>
             </range>
           </coverpointBin>
           <coverpointBin name="range" type="bins" key="0">
             <range from="-1" to="-1">
-              <contents coverageCount="0"/>
+              <contents coverageCount="35"/>
             </range>
           </coverpointBin>
           <coverpointBin name="max" type="bins" key="0">

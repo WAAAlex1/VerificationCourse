@@ -1,12 +1,12 @@
-TYPE covergroup_ssdt : 0.00%
-    CVP cp1 : 0.00%
+TYPE covergroup_ssdt : 66.67%
+    CVP cp1 : 66.67%
     Bins:
-        min : 0
-        range : 0
+        min : 4
+        range : 35
         max : 0
-    INST covergroup_ssdt : 0.00%
-        CVP cp1 : 0.00%
+    INST covergroup_ssdt : 66.67%
+        CVP cp1 : 66.67%
         Bins:
-            min : 0
-            range : 0
+            min : 4
+            range : 35
             max : 0

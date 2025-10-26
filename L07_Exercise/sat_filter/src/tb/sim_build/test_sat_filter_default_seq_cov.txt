@@ -1,0 +1,30 @@
+Coverage report for test_sat_filter_default_seq 
+------------------------------------------------
+ 
+TYPE covergroup_ssdt : 83.33%
+    CVP cp_data : 83.33%
+    Bins:
+        min : 2
+        range[0] : 2
+        range[1] : 2
+        range[2] : 3
+        range[3] : 1
+        max : 0
+    INST uvm_test_top.sat_filter_tb_env.uvc_ssdt_producer.coverage.cg_ssdt : 83.33%
+        CVP cp_data : 83.33%
+        Bins:
+            min : 1
+            range[0] : 1
+            range[1] : 1
+            range[2] : 1
+            range[3] : 1
+            max : 0
+    INST uvm_test_top.sat_filter_tb_env.uvc_ssdt_consumer.coverage.cg_ssdt : 66.67%
+        CVP cp_data : 66.67%
+        Bins:
+            min : 1
+            range[0] : 1
+            range[1] : 1
+            range[2] : 2
+            range[3] : 0
+            max : 0

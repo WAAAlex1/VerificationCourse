@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1761509286" />
+    <testcase name="test_sat_filter_default_seq" classname="test_sat_filter_default_seq" file="/home/awa/VerificationCourse/cocotb_env/lib/python3.10/site-packages/cocotb/decorators.py" lineno="17" time="0.062390804290771484" sim_time_ns="62.501" ratio_time="1001.766217161025" />
+  </testsuite>
+</testsuites>
